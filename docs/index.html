@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         :root {
             --bg: #FAFAFA;
@@ -167,6 +168,83 @@
             font-size: 14px;
             color: var(--indigo);
             font-weight: 500;
+        }
+
+        /* Page map */
+        .page-map {
+            margin-top: 48px;
+            padding-top: 36px;
+            border-top: 1px solid var(--border);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .page-map-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .page-map-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .page-map-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+        .page-map-links a:hover {
+            border-color: var(--indigo);
+            color: var(--indigo);
+            background: var(--indigo-light);
+        }
+        .page-map-links a .map-count {
+            font-size: 11px;
+            background: var(--bg);
+            color: var(--text-muted);
+            padding: 1px 7px;
+            border-radius: 100px;
+            font-weight: 700;
+        }
+        .page-map-links a:hover .map-count {
+            background: var(--indigo-mid);
+            color: var(--indigo);
+        }
+        .scroll-hint {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .scroll-hint .arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid var(--text-muted);
+            border-bottom: 2px solid var(--text-muted);
+            transform: rotate(45deg);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(6px); }
         }
 
         /* ── Sections ── */
@@ -446,10 +524,26 @@
             <span class="tag">Install</span>
             <code>/plugin marketplace add mooster/founder-toolkit</code>
         </div>
+
+        <div class="page-map">
+            <div class="page-map-label">What's Inside</div>
+            <div class="page-map-links">
+                <a href="#skills">Our Skills <span class="map-count">4</span></a>
+                <a href="#legal">Legal <span class="map-count">1</span></a>
+                <a href="#comms">Email &amp; Calendar <span class="map-count">2</span></a>
+                <a href="#sales">Sales &amp; Outreach <span class="map-count">2</span></a>
+                <a href="#product">Product &amp; Hiring <span class="map-count">2</span></a>
+                <a href="#coming-soon">Coming Soon <span class="map-count">5</span></a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <div class="scroll-hint">
+                <div class="arrow"></div>
+            </div>
+        </div>
     </section>
 
     <!-- ====== OUR SKILLS ====== -->
-    <section class="section" id="tools">
+    <section class="section" id="skills">
         <div class="section-head">
             <div class="eyebrow">Built by Us</div>
             <h2>Founder Skills</h2>
@@ -485,7 +579,7 @@
     </section>
 
     <!-- ====== LEGAL ====== -->
-    <section class="section">
+    <section class="section" id="legal">
         <div class="section-head">
             <div class="eyebrow">Legal &amp; Contracts</div>
             <h2>Contract Review</h2>
@@ -503,7 +597,7 @@
     </section>
 
     <!-- ====== EMAIL & CALENDAR ====== -->
-    <section class="section">
+    <section class="section" id="comms">
         <div class="section-head">
             <div class="eyebrow">Communication</div>
             <h2>Email &amp; Calendar</h2>
@@ -527,7 +621,7 @@
     </section>
 
     <!-- ====== SALES ====== -->
-    <section class="section">
+    <section class="section" id="sales">
         <div class="section-head">
             <div class="eyebrow">Sales &amp; Outreach</div>
             <h2>Lead Gen &amp; Research</h2>
@@ -551,7 +645,7 @@
     </section>
 
     <!-- ====== PRODUCT ====== -->
-    <section class="section">
+    <section class="section" id="product">
         <div class="section-head">
             <div class="eyebrow">Product &amp; Hiring</div>
             <h2>PM Frameworks &amp; Dev Tools</h2>
@@ -575,7 +669,7 @@
     </section>
 
     <!-- ====== COMING SOON ====== -->
-    <section class="section">
+    <section class="section" id="coming-soon">
         <div class="section-head">
             <div class="eyebrow">Coming Soon</div>
             <h2>Nobody built these yet.<br>So we will.</h2>
