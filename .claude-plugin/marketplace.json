@@ -1,0 +1,11 @@
+{
+  "name": "founder-toolkit",
+  "description": "A toolkit of Claude Code skills for startup founders — investor updates, pitch reviews, SaaS metrics, lead scoring, and Chinese social media content.",
+  "plugins": [
+    {
+      "name": "founder-toolkit",
+      "description": "5 skills for startup founders: investor updates, pitch deck review, SaaS metrics, outreach lead scoring, and Xiaohongshu content creation.",
+      "source": "."
+    }
+  ]
+}
