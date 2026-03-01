@@ -1,83 +1,44 @@
 ---
 name: pitch-reviewer
-description: Review startup pitch decks from a VC perspective with structured scoring and actionable feedback. Use when user mentions "review my pitch", "pitch deck feedback", "deck review", "BP review", "pitch deck", "investor deck", "review my deck", or wants feedback on fundraising materials.
+description: This skill should be used when the user asks to "review my pitch deck", "pitch deck feedback", "deck review", "BP review", "review my investor deck", "evaluate my pitch", or wants structured feedback on fundraising materials from a VC perspective. Provides 10-dimension scoring with actionable improvement suggestions.
 ---
 
 # Pitch Deck Reviewer
 
-Review pitch decks through the lens of a Series A/B investor. Not flattery — honest, specific, actionable feedback.
+Review pitch decks through the lens of a Series A/B investor. Honest, specific, actionable feedback — not flattery.
 
 ## Process
 
 ### Step 1: Intake
 
-Ask user to provide their deck:
-- PDF file (use Read tool)
+Collect the deck content:
+- PDF file (read with the Read tool)
 - Pasted text/slides
 - Key bullet points per slide
 
-Also ask:
+Also gather context:
 - **Stage**: Pre-seed / Seed / Series A / Series B+?
-- **Ask**: How much are you raising?
-- **Context**: Anything specific you want feedback on?
+- **Raise amount**: How much and at what valuation range?
+- **Specific concerns**: Any areas where feedback is especially wanted?
 
-### Step 2: Review Against 10 Dimensions
+### Step 2: Score Against 10 Dimensions
 
-Score each dimension **1-5** and provide specific feedback.
+Evaluate each dimension on a 1-5 scale. For detailed scoring criteria and common mistakes per dimension, consult `references/scoring-rubric.md`.
 
-#### 1. Narrative Arc (Does the story flow?)
-- Is there a clear problem → solution → why now → why you arc?
-- Does slide order build momentum?
-- Common mistake: jumping to product before establishing the problem
+| # | Dimension | What to evaluate |
+|---|-----------|-----------------|
+| 1 | Narrative Arc | Story flow — problem → solution → why now → why you |
+| 2 | Problem Statement | Real pain, quantified impact, not a feature gap |
+| 3 | Market Size | Bottoms-up TAM/SAM/SOM, not hand-wavy top-down |
+| 4 | Product/Solution | Clear connection to the problem, demo/screenshots shown |
+| 5 | Traction | Revenue, users, growth — business metrics not vanity |
+| 6 | Business Model | Pricing clarity, unit economics, path to profitability |
+| 7 | Competition | Honest landscape, sustainable differentiation |
+| 8 | Team | Founder-market fit, relevant experience |
+| 9 | Financials | Projections with stated assumptions, realistic inflection |
+| 10 | The Ask | Round size, use of funds, milestones this enables |
 
-#### 2. Problem Statement (Do I feel the pain?)
-- Is it a real problem or a manufactured one?
-- Quantified impact? (cost, time, risk)
-- Common mistake: describing a feature gap instead of a business problem
-
-#### 3. Market Size (Is this a big opportunity?)
-- TAM/SAM/SOM methodology — is it bottoms-up or hand-wavy top-down?
-- Is SAM realistic? (hint: if SAM = TAM, it's not)
-- Common mistake: "The global X market is $500B" with no path to capture
-
-#### 4. Product / Solution (Does this actually solve it?)
-- Is the solution clearly connected to the problem?
-- Demo / screenshots / workflow shown?
-- Common mistake: feature list instead of value proposition
-
-#### 5. Traction (Proof it works)
-- Revenue, users, growth rate, engagement metrics
-- Logos / case studies / testimonials
-- Common mistake: vanity metrics (downloads) instead of business metrics (revenue, retention)
-
-#### 6. Business Model (How do you make money?)
-- Pricing clarity
-- Unit economics (even early estimates)
-- Path to profitability narrative
-- Common mistake: "We'll figure out monetization later"
-
-#### 7. Competition (Why you and not them?)
-- Honest competitive landscape (2x2 matrix or table)
-- Sustainable differentiation (not just "better UX")
-- Common mistake: "No direct competitors" (red flag — means you haven't looked)
-
-#### 8. Team (Can you pull this off?)
-- Relevant experience for this specific problem
-- Founder-market fit narrative
-- Key hires made / planned
-- Common mistake: listing credentials without connecting them to the opportunity
-
-#### 9. Financials (Do the numbers make sense?)
-- Revenue projections with stated assumptions
-- Burn rate and runway
-- Key milestones tied to funding
-- Common mistake: hockey stick with no explanation of what inflects growth
-
-#### 10. The Ask (What do you need and why?)
-- Round size and valuation expectation
-- Use of funds breakdown
-- Milestones this funding enables
-- Common mistake: vague "growth and hiring" instead of specific milestones
+**Stage calibration:** Adjust expectations to the fundraising stage. Do not expect Series A traction from a pre-seed deck.
 
 ### Step 3: Output
 
@@ -91,37 +52,39 @@ Score each dimension **1-5** and provide specific feedback.
 
 | Dimension | Score | Key Feedback |
 |-----------|-------|-------------|
-| Narrative Arc | X/5 | ... |
-| Problem Statement | X/5 | ... |
-| Market Size | X/5 | ... |
-| Product/Solution | X/5 | ... |
-| Traction | X/5 | ... |
-| Business Model | X/5 | ... |
-| Competition | X/5 | ... |
-| Team | X/5 | ... |
-| Financials | X/5 | ... |
-| The Ask | X/5 | ... |
+| Narrative Arc | X/5 | [specific feedback] |
+| Problem Statement | X/5 | [specific feedback] |
+| Market Size | X/5 | [specific feedback] |
+| Product/Solution | X/5 | [specific feedback] |
+| Traction | X/5 | [specific feedback] |
+| Business Model | X/5 | [specific feedback] |
+| Competition | X/5 | [specific feedback] |
+| Team | X/5 | [specific feedback] |
+| Financials | X/5 | [specific feedback] |
+| The Ask | X/5 | [specific feedback] |
 | **Overall** | **X/50** | |
 
 ### Top 3 Things to Fix
-1. [Most impactful improvement]
+1. [Most impactful improvement with specific suggestion]
 2. [Second most impactful]
 3. [Third]
 
 ### What's Working Well
-- [Genuine strength, not filler]
+- [Genuine strengths, not filler]
 
 ### Red Flags an Investor Would Notice
-- [Things that would make a VC pass]
+- [Things that would cause a VC to pass]
 ```
 
 ## Tone Guidelines
 
-- **Be the honest friend, not the cheerleader.** Founders get enough "looks great!" — they need someone to point out the holes before investors do.
-- **Be specific.** "Your market sizing is weak" → "Your TAM uses top-down 'global wealth market is $100T' but doesn't show how you capture even 0.01%. Use bottoms-up: X target firms × $Y ACV = $Z SAM."
-- **Calibrate to stage.** Don't expect Series A traction from a pre-seed deck.
-- **Acknowledge what's genuinely good.** Honest criticism is more credible when you also call out real strengths.
+- **Be the honest friend, not the cheerleader.** Founders get enough "looks great!" — identify the holes before investors do.
+- **Be specific.** Not "market sizing is weak" but "TAM uses top-down 'global wealth market is $100T' without showing how to capture 0.01%. Use bottoms-up: X target firms x $Y ACV = $Z SAM."
+- **Calibrate to stage.** A pre-seed deck with a prototype and 3 pilot customers is different from a Series A with $1M ARR.
+- **Acknowledge what's genuinely good.** Honest criticism is more credible alongside real praise.
 
----
+## Additional Resources
 
-*Built by Mu Chen · CEO @ Canopy Cloud*
+### Reference Files
+
+- **`references/scoring-rubric.md`** — Detailed 1-5 scoring criteria for each of the 10 dimensions, common mistakes, and specific examples of good vs. weak slides.

@@ -1,96 +1,86 @@
 ---
 name: investor-update
-description: Generate professional investor monthly or quarterly updates for startup founders. Use when user mentions "investor update", "investor letter", "monthly update to investors", "quarterly update", "投资人月报", "给投资人写 update", or wants to communicate progress to investors/board.
+description: This skill should be used when the user asks to "write an investor update", "investor letter", "monthly update to investors", "quarterly update", "投资人月报", "给投资人写 update", "board update", or wants to communicate company progress to investors or board members. Generates concise, professional updates following YC and a16z best practices.
 ---
 
 # Investor Update Writer
 
-Generate concise, professional investor updates that keep your investors informed and engaged. Follows best practices from YC, a16z, and top VC firms.
+Generate concise, professional investor updates that keep investors informed and engaged.
 
 ## Process
 
 ### Step 1: Gather Key Data
 
-Ask the user for these inputs (skip any they don't have):
+Collect the following inputs. Skip any the user does not have — calculate derivable values automatically (e.g., runway = cash / burn).
 
-**Required:**
+**Required inputs:**
 - MRR or ARR (and previous period for comparison)
 - Cash balance and monthly burn rate
 - 2-3 highlights from this period
 - 1-2 challenges or asks
 
-**Optional (auto-calculate if possible):**
+**Optional inputs (auto-calculate when possible):**
 - Customer count (new, churned, total)
-- Runway (= cash / burn)
 - Key hires or team changes
 - Product milestones
 - Fundraising status
 
-**Do NOT ask for things you can calculate.** If they give you cash ($500K) and burn ($50K/mo), runway is 10 months — just calculate it.
+**Important:** Do not ask for values that can be derived. Given cash ($500K) and burn ($50K/mo), calculate runway as 10 months directly.
 
 ### Step 2: Generate the Update
 
-Use this structure:
+Follow this structure. For detailed formatting guidance and examples, consult `references/update-format.md`.
 
 ```
 Subject: [Company Name] — [Month Year] Investor Update
 
-Hi [investors / team],
-
 ## TL;DR
-[3 sentences max. Lead with the most important news. Be honest — if it was a tough month, say so.]
+[3 sentences max. Lead with most important news. Honest about tough months.]
 
 ## Key Metrics
-
-| Metric | This Month | Last Month | Change |
-|--------|-----------|------------|--------|
-| MRR | $XX | $XX | +X% |
-| Customers | XX | XX | +X |
-| Burn | $XX/mo | $XX/mo | — |
-| Runway | XX months | — | — |
-| [Custom] | XX | XX | +X% |
+[Table: Metric | This Month | Last Month | Change]
 
 ## Highlights
-- [Concrete achievement with numbers]
-- [Concrete achievement with numbers]
+[2-3 concrete achievements with numbers]
 
 ## Challenges
-- [Honest assessment — not sugarcoated, not catastrophized]
+[Honest assessment — not sugarcoated, not catastrophized]
 
 ## Asks
-[Specific, actionable requests. "Intro to VP Engineering at X" not "help with hiring".]
+[Specific, actionable requests — "Intro to VP Eng at X" not "help with hiring"]
 
 ## What's Next
-- [2-3 priorities for next period]
-
-Best,
-[Name]
+[2-3 priorities for next period]
 ```
 
-### Step 3: Tone Check
+### Step 3: Tone Verification
 
-Before outputting, verify:
+Before output, verify against these criteria:
 
 - **Honest but not dramatic** — "Growth slowed to 5% as we focused on retention" not "We're struggling"
 - **Specific not vague** — Numbers, names, dates. Not "things are going well"
-- **Concise** — Investors read dozens of these. Entire update should be <500 words
-- **Asks are actionable** — "Can you intro us to [specific person/company]?" not "We need help with sales"
+- **Concise** — Entire update under 500 words. Investors read dozens of these
+- **Actionable asks** — "Can you intro us to [specific person/company]?" not "We need help with sales"
 - **No jargon dumping** — Write for a smart generalist, not a domain expert
 
-## Language
+### Language Handling
 
 - Default to English
-- If user inputs in Chinese, output in Chinese with the same structure
-- Metric names stay in English even in Chinese updates (ARR, MRR, NRR are universal)
+- When user inputs in Chinese, output in Chinese with the same structure
+- Metric names remain in English even in Chinese updates (ARR, MRR, NRR are universal)
 
-## Anti-patterns to Avoid
+## Anti-Patterns
 
-- Don't pad with fluff ("We're excited to share...")
-- Don't hide bad news — investors respect honesty and lose trust when surprised
-- Don't make it longer than necessary — if it's a quiet month, a short update is fine
-- Don't include vanity metrics without context (page views without conversion)
-- Don't ask for "advice" generically — ask for specific intros or specific help
+Avoid these common mistakes:
 
----
+- Padding with fluff ("We're excited to share...")
+- Hiding bad news — investors respect honesty and lose trust when surprised later
+- Making it longer than necessary — a quiet month deserves a short update
+- Including vanity metrics without context (page views without conversion)
+- Asking for generic "advice" instead of specific intros or help
 
-*Built by Mu Chen · CEO @ Canopy Cloud*
+## Additional Resources
+
+### Reference Files
+
+- **`references/update-format.md`** — Detailed formatting guide with complete examples, subject line patterns, and metric presentation best practices.

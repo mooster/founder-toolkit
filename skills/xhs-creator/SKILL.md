@@ -1,115 +1,80 @@
 ---
 name: xhs-creator
-description: Create Xiaohongshu (Little Red Book) posts with built-in content audit rules, formatting best practices, and Chinese social media copywriting. Use when user mentions "小红书", "XHS", "红书", "种草", "轮播图", "小红书文案", or wants to create Chinese social media content.
+description: This skill should be used when the user asks to "写小红书", "小红书文案", "XHS post", "红书内容", "种草笔记", "轮播图文案", or wants to create content for Xiaohongshu (Little Red Book). Provides built-in content audit rules, platform-specific formatting, and Chinese social media copywriting guidance.
 ---
 
 # 小红书内容创作助手
 
-帮助用户创作符合小红书平台规范的内容，内置审核红线检测、排版规范和文案套路。
+Create Xiaohongshu posts that comply with platform content rules, with built-in audit detection for banned content.
 
-## 流程
+## Process
 
-### Step 1: 了解需求
+### Step 1: Understand the Brief
 
-问用户：
-- **主题**是什么？
-- **目标**：种草/教程/引流/个人IP？
-- **风格**：口语化闲聊 / 干货清单 / 故事型？
+Gather the following before writing:
 
-### Step 2: 生成内容
+- **Topic**: What is the post about?
+- **Goal**: 种草 (product recommendation) / 教程 (tutorial) / 引流 (traffic) / 个人IP (personal branding)?
+- **Style**: 口语闲聊 (casual chat) / 干货清单 (listicle) / 故事型 (storytelling)?
 
-输出以下内容：
+### Step 2: Generate Content
 
-**标题**（必须遵守）:
-- 控制 20 字以内
-- 带 1-2 个 emoji 吸睛
-- 用疑问句或数字开头效果最好（"3 个方法让你..." "为什么..."）
+**Title requirements:**
+- Maximum 20 characters
+- Include 1-2 emoji for visual appeal
+- Questions or numbers perform best ("3 个方法让你..." / "为什么...")
 
-**正文**（必须遵守）:
-- 口语化、有代入感，用 "家人们"、"姐妹们"、"真的绝了" 等小红书语感
-- 分段短小，每段 2-3 行
-- 用 emoji 做视觉分隔（但不要过度）
-- 干货内容用数字列表
-- 结尾加互动引导："你们觉得呢？" "评论区告诉我～"
+**Body requirements:**
+- Conversational tone with 小红书 vocabulary ("家人们"、"真的绝了"、"姐妹们")
+- Short paragraphs (2-3 lines each)
+- Emoji as visual separators (not excessive)
+- Numbered lists for actionable content
+- End with engagement hook: "你们觉得呢？" / "评论区告诉我～"
 
-**话题标签**:
-- 5-10 个相关话题
-- 混合大话题（#日常分享）和精准话题（#效率工具推荐）
+**Hashtags:**
+- 5-10 relevant topics
+- Mix broad topics (#日常分享) with precise ones (#效率工具推荐)
 
-**发布建议**:
-- 最佳时间：晚上 8-10 点 或 中午 12-1 点
-- 首图决定点击率，要有视觉冲击
+**Publishing advice:**
+- Optimal posting: 8-10 PM or 12-1 PM
+- First image determines click-through rate
 
-### Step 3: 审核检测（强制执行）
+### Step 3: Mandatory Audit Check
 
-生成内容后，**必须**逐条检查以下红线。如果触犯，自动替换为安全写法并告知用户。
+After generating content, scan against the audit rules in `references/audit-rules.md`. This step is **non-negotiable** — violating any rule results in the post being silently hidden by the platform.
 
-## 审核红线（一级敏感，触犯=笔记不可见）
+For each flagged term:
+1. Identify the violation
+2. Replace with the safe alternative from the reference table
+3. Inform the user what was changed and why
 
-以下词汇和内容**绝对不能出现**在小红书笔记中：
+### Step 4: Image/Carousel Guidelines
 
-### 境外服务/软件
-| 禁用词 | 安全替代 |
-|--------|---------|
-| VPN、翻墙、科学上网、机场、梯子 | "切换手机热点重试"、"检查网络环境" |
-| ChatGPT、Claude、OpenAI | "主流 AI 服务"、提国内大模型（通义千问、豆包、Kimi、智谱） |
-| Telegram、Discord | "各种主流聊天工具"、"你常用的聊天工具" |
-| WhatsApp | 同上 |
-| Google（搜索/服务） | "搜索引擎"、"在线工具" |
+When the user needs visual content:
+- Dimensions: **1080x1440** (3:4 portrait) for best display
+- Carousel: 5-9 slides, first slide is most critical
+- Text on images must NOT use emoji (font rendering issue — displays as squares)
+- Use colored circle icons or text labels instead of emoji
+- Badge/label widths must adapt to text content length
 
-### 引流违规
-| 禁用行为 | 安全替代 |
-|---------|---------|
-| 放微信号/群二维码 | 评论区互动引导、"关注+收藏，私信我" |
-| 放外部链接 | "搜索 XXX 就能找到" |
-| 提其他平台名字导流 | 避免直接提平台名 |
-
-### 审核触发的 5 条规则
-1. 展示、分享未经网安部门认证许可的服务软件（如VPN）
-2. 寻求、提供或交易境外软件或网站
-3. 买卖、提供境外软件账号
-4. 教授如何翻墙、如何下载境外软件
-5. 其他违反平台规则的内容
-
-### 被打回后的重发策略
-- 间隔至少 **1 天**再重新发布
-- 不要短时间内重复提交同一篇
-- 修改后重发要确保敏感词已全部替换
-
-## 图片/轮播图规范
-
-如果用户需要配图建议：
-- 尺寸：**1080x1440**（3:4 竖版）最佳
-- 轮播图：5-9 张，首图最重要
-- 图片上的文字不要用 emoji（字体渲染问题，会显示方块）
-- 用彩色圆形图标/文字标记替代 emoji
-- Badge/标签宽度要自适应文字内容
-
-## 示例输出格式
+## Output Format
 
 ```
-📌 标题：3 个免费 AI 工具让你效率翻倍
+📌 标题：[≤20 chars with emoji]
 
 正文：
-家人们！！今天必须分享这 3 个宝藏工具 🔥
+[Conversational body with emoji separators]
+[Engagement hook at end]
 
-1️⃣ 通义千问
-blah blah...
+话题：#tag1 #tag2 #tag3 ...
 
-2️⃣ Kimi
-blah blah...
+发布建议：[Timing + first image advice]
 
-3️⃣ 豆包
-blah blah...
-
-每个都是免费的！赶紧去试试 💪
-你们还有什么好用的工具？评论区分享一下～
-
-话题：#AI工具 #效率提升 #好物分享 #打工人必备 #科技改变生活
-
-发布建议：今晚 8-9 点发，首图用工具截图拼图
+⚠️ 审核检查：[List any replacements made, or "通过，无敏感词"]
 ```
 
----
+## Additional Resources
 
-*Built by Mu Chen · CEO @ Canopy Cloud*
+### Reference Files
+
+- **`references/audit-rules.md`** — Complete list of banned terms, safe replacements, and platform audit rules. Consult this file for every post before output.
