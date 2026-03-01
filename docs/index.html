@@ -5,195 +5,275 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Founder Skills — The AI-Native CEO Toolkit</title>
     <meta name="description" content="Curated tools, skills, and MCP servers for AI-native startup founders. Every tool quality-checked. Zero trash.">
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #0a0a0b;
-            --surface: #141416;
-            --border: #23232a;
-            --text: #e8e8ec;
-            --text-muted: #8b8b97;
-            --accent: #c4a24f;
-            --accent-dim: rgba(196, 162, 79, 0.12);
-            --green: #34d399;
-            --green-dim: rgba(52, 211, 153, 0.1);
-            --blue: #60a5fa;
-            --blue-dim: rgba(96, 165, 250, 0.1);
-            --red: #f87171;
-            --red-dim: rgba(248, 113, 113, 0.1);
-            --purple: #a78bfa;
-            --purple-dim: rgba(167, 139, 250, 0.1);
+            --bg: #FAFAFA;
+            --white: #FFFFFF;
+            --surface: #FFFFFF;
+            --border: #E5E7EB;
+            --border-hover: #C7C9CF;
+            --text: #111827;
+            --text-secondary: #4B5563;
+            --text-muted: #9CA3AF;
+            --indigo: #4F46E5;
+            --indigo-light: #EEF2FF;
+            --indigo-mid: #C7D2FE;
+            --emerald: #059669;
+            --emerald-light: #ECFDF5;
+            --violet: #7C3AED;
+            --violet-light: #F5F3FF;
+            --amber: #D97706;
+            --amber-light: #FFFBEB;
+            --radius: 16px;
+            --radius-sm: 10px;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-        /* Hero */
-        .hero { padding: 100px 0 80px; text-align: center; }
-        .hero-badge {
+        /* ── Nav ── */
+        nav {
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .nav-logo img { width: 28px; height: 28px; }
+        .nav-logo span { font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
             display: inline-block;
+            padding: 8px 18px;
+            background: var(--indigo);
+            color: #fff !important;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: opacity 0.15s;
+        }
+        .nav-cta:hover { opacity: 0.9; }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: url('hero-bg.png') top center / 100% auto no-repeat;
+        }
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 6px 16px;
-            border: 1px solid var(--border);
+            background: var(--indigo-light);
+            border: 1px solid var(--indigo-mid);
             border-radius: 100px;
             font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            letter-spacing: 0.5px;
+            font-weight: 500;
+            color: var(--indigo);
+            margin-bottom: 28px;
         }
-        .hero-badge span { color: var(--accent); }
+        .hero-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--indigo); }
         .hero h1 {
-            font-size: clamp(36px, 6vw, 56px);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
+            font-size: clamp(36px, 6vw, 60px);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -0.035em;
             margin-bottom: 20px;
+            color: var(--text);
         }
-        .hero h1 em { font-style: normal; color: var(--accent); }
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         .hero .subtitle {
             font-size: 18px;
-            color: var(--text-muted);
-            max-width: 620px;
+            color: var(--text-secondary);
+            max-width: 540px;
             margin: 0 auto 40px;
+            line-height: 1.7;
         }
-        .hero .stats {
+
+        /* Stats */
+        .stats-row {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 48px;
             flex-wrap: wrap;
             margin-bottom: 40px;
         }
-        .hero .stat { text-align: center; }
-        .hero .stat .num { font-size: 28px; font-weight: 700; color: var(--accent); }
-        .hero .stat .lbl { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Install */
-        .install-block {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 28px;
-            display: inline-block;
-            text-align: left;
-            margin-bottom: 12px;
+        .stat { text-align: center; }
+        .stat .num {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--indigo);
+            letter-spacing: -0.02em;
         }
-        .install-block .label {
+        .stat .lbl {
             font-size: 12px;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-        .install-block code {
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 15px;
-            color: var(--green);
+            letter-spacing: 1.2px;
+            font-weight: 600;
         }
 
-        /* Section headers */
-        .section { padding: 80px 0; border-top: 1px solid var(--border); }
-        .section-header {
+        /* Install */
+        .install-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .install-box .tag {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+        .install-box code {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 14px;
+            color: var(--indigo);
+            font-weight: 500;
+        }
+
+        /* ── Sections ── */
+        .section { padding: 80px 0; }
+        .section + .section { border-top: 1px solid var(--border); }
+        .section-head {
             text-align: center;
             margin-bottom: 48px;
         }
-        .section-header .eyebrow {
+        .section-head .eyebrow {
             font-size: 12px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--text-muted);
+            color: var(--indigo);
             margin-bottom: 12px;
         }
-        .section-header h2 {
-            font-size: clamp(24px, 4vw, 36px);
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        .section-head h2 {
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
             margin-bottom: 12px;
+            color: var(--text);
         }
-        .section-header p {
+        .section-head p {
             font-size: 16px;
-            color: var(--text-muted);
-            max-width: 560px;
+            color: var(--text-secondary);
+            max-width: 520px;
             margin: 0 auto;
+            line-height: 1.7;
         }
 
-        /* Category label */
-        .cat-label {
-            display: inline-block;
-            padding: 4px 12px;
+        /* Category pills */
+        .cat-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
             border-radius: 100px;
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 24px;
         }
-        .cat-ours { background: var(--accent-dim); color: var(--accent); }
-        .cat-verified { background: var(--green-dim); color: var(--green); }
-        .cat-build { background: var(--purple-dim); color: var(--purple); }
+        .cat-ours { background: var(--indigo-light); color: var(--indigo); }
+        .cat-verified { background: var(--emerald-light); color: var(--emerald); }
+        .cat-building { background: var(--violet-light); color: var(--violet); }
 
-        /* Tool cards */
-        .tool-grid {
+        /* ── Cards ── */
+        .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 16px;
-            margin-bottom: 48px;
         }
-        .tool-card {
-            background: var(--surface);
+        .card {
+            background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: var(--radius);
             padding: 24px;
-            transition: border-color 0.2s;
+            transition: border-color 0.15s, box-shadow 0.15s;
             text-decoration: none;
             color: inherit;
             display: block;
         }
-        .tool-card:hover { border-color: var(--accent); }
-        .tool-card .tool-top {
+        .card:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .card-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
         }
-        .tool-card h3 { font-size: 16px; font-weight: 600; }
-        .tool-card .stars {
+        .card h3 { font-size: 16px; font-weight: 700; color: var(--text); }
+        .card .stars {
             font-size: 12px;
-            color: var(--accent);
-            font-family: 'SF Mono', 'Fira Code', monospace;
+            color: var(--amber);
+            font-family: 'SF Mono', monospace;
+            font-weight: 600;
             white-space: nowrap;
         }
-        .tool-card .tool-type {
-            font-size: 11px;
+        .card .type {
+            font-size: 12px;
             color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
-        .tool-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.5;
+        .card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-        .tool-card .verdict {
+        .card .badge {
             display: inline-block;
-            margin-top: 12px;
+            margin-top: 14px;
             font-size: 11px;
-            font-weight: 600;
-            padding: 3px 10px;
+            font-weight: 700;
+            padding: 4px 12px;
             border-radius: 100px;
         }
-        .verdict-good { background: var(--green-dim); color: var(--green); }
-        .verdict-ours { background: var(--accent-dim); color: var(--accent); }
-        .verdict-gap { background: var(--purple-dim); color: var(--purple); }
+        .badge-ours { background: var(--indigo-light); color: var(--indigo); }
+        .badge-good { background: var(--emerald-light); color: var(--emerald); }
+        .badge-soon { background: var(--violet-light); color: var(--violet); }
 
-        /* Pricing */
+        /* ── Pricing ── */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -201,66 +281,134 @@
             margin-bottom: 40px;
         }
         .price-card {
-            background: var(--surface);
+            background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
-            text-align: center;
+            border-radius: var(--radius);
+            padding: 32px 28px;
         }
-        .price-card .price { font-size: 32px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
-        .price-card .period { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
-        .price-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
-        .price-card ul { list-style: none; text-align: left; font-size: 14px; color: var(--text-muted); }
-        .price-card ul li { padding: 6px 0; border-bottom: 1px solid var(--border); }
+        .price-card.featured {
+            border-color: var(--indigo);
+            box-shadow: 0 0 0 1px var(--indigo);
+            position: relative;
+        }
+        .price-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--indigo);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 14px;
+            border-radius: 100px;
+            letter-spacing: 0.5px;
+        }
+        .price-card .price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+        .price-card .price-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+        .price-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        .price-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .price-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         .price-card ul li:last-child { border-bottom: none; }
-        .price-card ul li::before { content: "-> "; color: var(--accent); font-family: 'SF Mono', monospace; font-size: 12px; }
-
-        /* CTA */
-        .cta-link {
-            display: inline-block;
-            padding: 12px 28px;
-            background: var(--accent);
-            color: var(--bg);
-            font-weight: 600;
-            font-size: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: opacity 0.2s;
+        .price-card ul li::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--emerald-light);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%23059669' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
         }
-        .cta-link:hover { opacity: 0.85; }
-        .cta-outline {
+
+        /* CTA buttons */
+        .btn-primary {
             display: inline-block;
-            padding: 12px 28px;
-            border: 1px solid var(--accent);
-            color: var(--accent);
+            padding: 14px 32px;
+            background: var(--indigo);
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.15s;
+            box-shadow: 0 1px 2px rgba(79,70,229,0.3);
+        }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79,70,229,0.25); }
+        .btn-ghost {
+            display: inline-block;
+            padding: 14px 32px;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
             font-weight: 600;
             font-size: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.15s;
             margin-left: 12px;
         }
-        .cta-outline:hover { background: var(--accent-dim); }
+        .btn-ghost:hover { border-color: var(--text-muted); color: var(--text); }
         .text-center { text-align: center; }
 
-        /* Footer */
+        /* ── Footer ── */
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border);
             text-align: center;
+        }
+        .sister {
             font-size: 14px;
             color: var(--text-muted);
+            margin-bottom: 12px;
         }
-        footer a { color: var(--text); text-decoration: none; }
-        footer a:hover { color: var(--accent); }
-        .sister { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
-        .sister a { color: var(--blue); text-decoration: none; }
+        .sister a { color: var(--indigo); text-decoration: none; font-weight: 500; }
         .sister a:hover { text-decoration: underline; }
+        .footer-credit {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .footer-credit a { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+        .footer-credit a:hover { color: var(--indigo); }
 
+        /* ── Responsive ── */
         @media (max-width: 640px) {
-            .tool-grid { grid-template-columns: 1fr; }
+            .card-grid { grid-template-columns: 1fr; }
             .pricing-grid { grid-template-columns: 1fr; }
-            .cta-outline { margin-left: 0; margin-top: 12px; }
+            .btn-ghost { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+            .btn-primary { display: block; text-align: center; }
+            .stats-row { gap: 24px; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .hero { padding: 60px 0 40px; }
         }
     </style>
 </head>
@@ -268,194 +416,209 @@
 
 <div class="container">
 
+    <!-- Nav -->
+    <nav>
+        <a href="/" class="nav-logo">
+            <img src="logo.png" alt="Founder Skills">
+            <span>Founder Skills</span>
+        </a>
+        <div class="nav-links">
+            <a href="#tools">Tools</a>
+            <a href="#pricing">Pricing</a>
+            <a href="https://github.com/mooster/founder-toolkit" class="nav-cta" target="_blank">GitHub</a>
+        </div>
+    </nav>
+
     <!-- ====== HERO ====== -->
     <section class="hero">
-        <div class="hero-badge">AI-Native CEO Toolkit <span>&middot; Quality-Checked</span></div>
-        <h1>Every tool a <em>founder</em> needs.<br>Zero trash.</h1>
+        <div class="hero-pill"><span class="dot"></span> AI-Native CEO Toolkit &middot; Quality-Checked</div>
+        <h1>Every tool a <em>founder</em><br>needs. Zero trash.</h1>
         <p class="subtitle">We tested every Claude Code plugin, MCP server, and AI tool a startup CEO might use. Most are garbage. Here's what actually works.</p>
-        <div class="stats">
-            <div class="stat"><div class="num">30+</div><div class="lbl">Tools reviewed</div></div>
+
+        <div class="stats-row">
+            <div class="stat"><div class="num">30+</div><div class="lbl">Tools Reviewed</div></div>
             <div class="stat"><div class="num">7</div><div class="lbl">Passed QA</div></div>
-            <div class="stat"><div class="num">4</div><div class="lbl">Built by us</div></div>
-            <div class="stat"><div class="num">5</div><div class="lbl">Gaps to fill</div></div>
+            <div class="stat"><div class="num">4</div><div class="lbl">Built by Us</div></div>
+            <div class="stat"><div class="num">5</div><div class="lbl">Gaps to Fill</div></div>
         </div>
-        <div class="install-block">
-            <div class="label">Install our skills</div>
+
+        <div class="install-box">
+            <span class="tag">Install</span>
             <code>/plugin marketplace add mooster/founder-toolkit</code>
         </div>
     </section>
 
     <!-- ====== OUR SKILLS ====== -->
-    <section class="section">
-        <div class="section-header">
+    <section class="section" id="tools">
+        <div class="section-head">
             <div class="eyebrow">Built by Us</div>
             <h2>Founder Skills</h2>
-            <p>Four skills we built from real startup operating experience. Free, open source, zero config.</p>
+            <p>Four skills built from real startup operating experience. Free, open source, zero config.</p>
         </div>
-        <div class="cat-label cat-ours">Our Plugin</div>
-        <div class="tool-grid">
-            <div class="tool-card">
-                <div class="tool-top"><h3>Investor Update Writer</h3></div>
-                <div class="tool-type">Claude Code Skill</div>
+        <div class="cat-pill cat-ours">Our Plugin</div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-top"><h3>Investor Update Writer</h3></div>
+                <div class="type">Claude Code Skill</div>
                 <p>Input MRR, burn, highlights. Get a concise, professional update following YC and a16z best practices. Under 500 words, no fluff.</p>
-                <span class="verdict verdict-ours">Our Skill</span>
+                <span class="badge badge-ours">Our Skill</span>
             </div>
-            <div class="tool-card">
-                <div class="tool-top"><h3>Pitch Deck Reviewer</h3></div>
-                <div class="tool-type">Claude Code Skill</div>
+            <div class="card">
+                <div class="card-top"><h3>Pitch Deck Reviewer</h3></div>
+                <div class="type">Claude Code Skill</div>
                 <p>10-dimension scoring from a VC perspective. Narrative, market size, traction, team, the ask — with specific red flags.</p>
-                <span class="verdict verdict-ours">Our Skill</span>
+                <span class="badge badge-ours">Our Skill</span>
             </div>
-            <div class="tool-card">
-                <div class="tool-top"><h3>Startup Metrics Dashboard</h3></div>
-                <div class="tool-type">Claude Code Skill</div>
+            <div class="card">
+                <div class="card-top"><h3>Startup Metrics Dashboard</h3></div>
+                <div class="type">Claude Code Skill</div>
                 <p>Full metric suite: ARR, NRR, LTV:CAC, burn multiple, runway, magic number. With stage-appropriate benchmarks.</p>
-                <span class="verdict verdict-ours">Our Skill</span>
+                <span class="badge badge-ours">Our Skill</span>
             </div>
-            <div class="tool-card">
-                <div class="tool-top"><h3>Outreach Lead Scorer</h3></div>
-                <div class="tool-type">Claude Code Skill</div>
+            <div class="card">
+                <div class="card-top"><h3>Outreach Lead Scorer</h3></div>
+                <div class="type">Claude Code Skill</div>
                 <p>Define your ICP, input a company list. Get A/B/C/D grades with transparent rationale. Tested on 300+ companies.</p>
-                <span class="verdict verdict-ours">Our Skill</span>
+                <span class="badge badge-ours">Our Skill</span>
             </div>
         </div>
     </section>
 
-    <!-- ====== LEGAL & CONTRACTS ====== -->
+    <!-- ====== LEGAL ====== -->
     <section class="section">
-        <div class="section-header">
+        <div class="section-head">
             <div class="eyebrow">Legal &amp; Contracts</div>
             <h2>Contract Review</h2>
             <p>Review NDAs, vendor agreements, and compliance docs without a $500/hr lawyer.</p>
         </div>
-        <div class="cat-label cat-verified">Verified</div>
-        <div class="tool-grid">
-            <a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/legal" class="tool-card" target="_blank">
-                <div class="tool-top"><h3>Anthropic Legal Plugin</h3><span class="stars">8.3K</span></div>
-                <div class="tool-type">Official Claude Code Plugin</div>
+        <div class="cat-pill cat-verified">Verified</div>
+        <div class="card-grid">
+            <a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/legal" class="card" target="_blank">
+                <div class="card-top"><h3>Anthropic Legal Plugin</h3><span class="stars">8.3K</span></div>
+                <div class="type">Official Claude Code Plugin</div>
                 <p>Clause-by-clause contract analysis with RED/YELLOW/GREEN risk flags. NDA triage, vendor review, compliance checks. Configurable playbooks.</p>
-                <span class="verdict verdict-good">Verified Good</span>
+                <span class="badge badge-good">Verified Good</span>
             </a>
         </div>
     </section>
 
     <!-- ====== EMAIL & CALENDAR ====== -->
     <section class="section">
-        <div class="section-header">
+        <div class="section-head">
             <div class="eyebrow">Communication</div>
             <h2>Email &amp; Calendar</h2>
             <p>Manage inbox, schedule meetings, and draft replies — all from Claude Code.</p>
         </div>
-        <div class="cat-label cat-verified">Verified</div>
-        <div class="tool-grid">
-            <a href="https://github.com/taylorwilsdon/google_workspace_mcp" class="tool-card" target="_blank">
-                <div class="tool-top"><h3>Google Workspace MCP</h3><span class="stars">1.6K</span></div>
-                <div class="tool-type">MCP Server</div>
+        <div class="cat-pill cat-verified">Verified</div>
+        <div class="card-grid">
+            <a href="https://github.com/taylorwilsdon/google_workspace_mcp" class="card" target="_blank">
+                <div class="card-top"><h3>Google Workspace MCP</h3><span class="stars">1.6K</span></div>
+                <div class="type">MCP Server</div>
                 <p>Gmail, Calendar, Drive, Docs, Sheets — full Google Workspace control. Most mature MCP in the ecosystem. OAuth 2.1, multi-user.</p>
-                <span class="verdict verdict-good">Verified Good</span>
+                <span class="badge badge-good">Verified Good</span>
             </a>
-            <a href="https://github.com/elyxlz/microsoft-mcp" class="tool-card" target="_blank">
-                <div class="tool-top"><h3>Microsoft 365 MCP</h3><span class="stars">39</span></div>
-                <div class="tool-type">MCP Server</div>
+            <a href="https://github.com/elyxlz/microsoft-mcp" class="card" target="_blank">
+                <div class="card-top"><h3>Microsoft 365 MCP</h3><span class="stars">39</span></div>
+                <div class="type">MCP Server</div>
                 <p>Outlook email, Calendar, OneDrive, Contacts. 40+ tools, local token caching. Small but clean — only 1 open issue.</p>
-                <span class="verdict verdict-good">Verified Good</span>
+                <span class="badge badge-good">Verified Good</span>
             </a>
         </div>
     </section>
 
-    <!-- ====== SALES & OUTREACH ====== -->
+    <!-- ====== SALES ====== -->
     <section class="section">
-        <div class="section-header">
+        <div class="section-head">
             <div class="eyebrow">Sales &amp; Outreach</div>
-            <h2>Lead Gen &amp; CRM</h2>
-            <p>Find leads, enrich data, and manage your pipeline.</p>
+            <h2>Lead Gen &amp; Research</h2>
+            <p>Find leads, enrich data, and research markets.</p>
         </div>
-        <div class="cat-label cat-verified">Verified</div>
-        <div class="tool-grid">
-            <a href="https://github.com/stickerdaniel/linkedin-mcp-server" class="tool-card" target="_blank">
-                <div class="tool-top"><h3>LinkedIn MCP</h3><span class="stars">949</span></div>
-                <div class="tool-type">MCP Server</div>
+        <div class="cat-pill cat-verified">Verified</div>
+        <div class="card-grid">
+            <a href="https://github.com/stickerdaniel/linkedin-mcp-server" class="card" target="_blank">
+                <div class="card-top"><h3>LinkedIn MCP</h3><span class="stars">949</span></div>
+                <div class="type">MCP Server</div>
                 <p>Scrape profiles, companies, and job postings. Only 2 open issues — users asking for MORE features, not complaining.</p>
-                <span class="verdict verdict-good">Verified Good</span>
+                <span class="badge badge-good">Verified Good</span>
             </a>
-            <a href="https://github.com/king-of-the-grackles/reddit-research-mcp" class="tool-card" target="_blank">
-                <div class="tool-top"><h3>Reddit Research MCP</h3><span class="stars">86</span></div>
-                <div class="tool-type">MCP Server</div>
+            <a href="https://github.com/king-of-the-grackles/reddit-research-mcp" class="card" target="_blank">
+                <div class="card-top"><h3>Reddit Research MCP</h3><span class="stars">86</span></div>
+                <div class="type">MCP Server</div>
                 <p>Semantic search across 20,000+ subreddits. Competitive intelligence, customer discovery, market research. Solid and focused.</p>
-                <span class="verdict verdict-good">Verified Good</span>
+                <span class="badge badge-good">Verified Good</span>
             </a>
         </div>
     </section>
 
-    <!-- ====== PRODUCT & MANAGEMENT ====== -->
+    <!-- ====== PRODUCT ====== -->
     <section class="section">
-        <div class="section-header">
+        <div class="section-head">
             <div class="eyebrow">Product &amp; Hiring</div>
-            <h2>PM Frameworks &amp; Dev Environment</h2>
+            <h2>PM Frameworks &amp; Dev Tools</h2>
             <p>Product management skills and professional Claude Code tooling.</p>
         </div>
-        <div class="cat-label cat-verified">Verified</div>
-        <div class="tool-grid">
-            <a href="https://github.com/RefoundAI/lenny-skills" class="tool-card" target="_blank">
-                <div class="tool-top"><h3>Lenny PM Skills</h3><span class="stars">319</span></div>
-                <div class="tool-type">Claude Code Skills (86)</div>
-                <p>86 product management skills: writing JDs, evaluating candidates, roadmap planning, user interviews. From Lenny's Podcast frameworks. Zero issues.</p>
-                <span class="verdict verdict-good">Verified Good</span>
+        <div class="cat-pill cat-verified">Verified</div>
+        <div class="card-grid">
+            <a href="https://github.com/RefoundAI/lenny-skills" class="card" target="_blank">
+                <div class="card-top"><h3>Lenny PM Skills</h3><span class="stars">319</span></div>
+                <div class="type">Claude Code Skills (86)</div>
+                <p>86 product management skills: writing JDs, evaluating candidates, roadmap planning, user interviews. From Lenny's Podcast frameworks.</p>
+                <span class="badge badge-good">Verified Good</span>
             </a>
-            <a href="https://github.com/maxritter/claude-pilot" class="tool-card" target="_blank">
-                <div class="tool-top"><h3>Pilot Shell</h3><span class="stars">1.5K</span></div>
-                <div class="tool-type">Dev Environment</div>
-                <p>Professional Claude Code wrapper. Multi-session management, structured workflows. Updated today, zero open issues. The only session tool worth using.</p>
-                <span class="verdict verdict-good">Verified Good</span>
+            <a href="https://github.com/maxritter/claude-pilot" class="card" target="_blank">
+                <div class="card-top"><h3>Pilot Shell</h3><span class="stars">1.5K</span></div>
+                <div class="type">Dev Environment</div>
+                <p>Professional Claude Code wrapper. Multi-session management, structured workflows. Updated daily, zero open issues.</p>
+                <span class="badge badge-good">Verified Good</span>
             </a>
         </div>
     </section>
 
-    <!-- ====== GAPS - WE'RE BUILDING ====== -->
+    <!-- ====== COMING SOON ====== -->
     <section class="section">
-        <div class="section-header">
+        <div class="section-head">
             <div class="eyebrow">Coming Soon</div>
-            <h2>Nobody built these yet. So we will.</h2>
-            <p>We reviewed 30+ tools in each category. These gaps have zero good solutions. We're building them.</p>
+            <h2>Nobody built these yet.<br>So we will.</h2>
+            <p>We reviewed 30+ tools in each category. These gaps have zero good solutions.</p>
         </div>
-        <div class="cat-label cat-build">Building</div>
-        <div class="tool-grid">
-            <div class="tool-card">
-                <div class="tool-top"><h3>CEO Weekly Briefing</h3></div>
-                <div class="tool-type">Planned Skill</div>
-                <p>Aggregate Slack, CRM, and metrics into a one-page CEO briefing. Every Monday, zero effort. No good tool exists.</p>
-                <span class="verdict verdict-gap">Coming Soon</span>
+        <div class="cat-pill cat-building">Building</div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-top"><h3>CEO Weekly Briefing</h3></div>
+                <div class="type">Planned Skill</div>
+                <p>Aggregate Slack, CRM, and metrics into a one-page CEO briefing. Every Monday, zero effort.</p>
+                <span class="badge badge-soon">Coming Soon</span>
             </div>
-            <div class="tool-card">
-                <div class="tool-top"><h3>Board Deck Generator</h3></div>
-                <div class="tool-type">Planned Skill</div>
-                <p>Metrics + updates into a board-ready PPT. Every existing PPT tool crashes or can't save files. We'll build one that works.</p>
-                <span class="verdict verdict-gap">Coming Soon</span>
+            <div class="card">
+                <div class="card-top"><h3>Board Deck Generator</h3></div>
+                <div class="type">Planned Skill</div>
+                <p>Metrics + updates into a board-ready PPT. Every existing PPT tool crashes or can't save files.</p>
+                <span class="badge badge-soon">Coming Soon</span>
             </div>
-            <div class="tool-card">
-                <div class="tool-top"><h3>Meeting &rarr; Action Items</h3></div>
-                <div class="tool-type">Planned Skill</div>
-                <p>Lightweight meeting transcription to structured action items. Vexa is 2.5GB and flaky. We'll make a skill that just works.</p>
-                <span class="verdict verdict-gap">Coming Soon</span>
+            <div class="card">
+                <div class="card-top"><h3>Meeting &rarr; Action Items</h3></div>
+                <div class="type">Planned Skill</div>
+                <p>Lightweight meeting transcription to structured action items. Vexa is 2.5GB and flaky.</p>
+                <span class="badge badge-soon">Coming Soon</span>
             </div>
-            <div class="tool-card">
-                <div class="tool-top"><h3>Standup Aggregator</h3></div>
-                <div class="tool-type">Planned Skill</div>
-                <p>Collect async standups from your team, generate a CEO-view dashboard. Only SaaS solutions exist. No Claude Code skill yet.</p>
-                <span class="verdict verdict-gap">Coming Soon</span>
+            <div class="card">
+                <div class="card-top"><h3>Standup Aggregator</h3></div>
+                <div class="type">Planned Skill</div>
+                <p>Collect async standups from your team, generate a CEO-view dashboard.</p>
+                <span class="badge badge-soon">Coming Soon</span>
             </div>
-            <div class="tool-card">
-                <div class="tool-top"><h3>Cap Table Lite</h3></div>
-                <div class="tool-type">Planned Skill</div>
-                <p>Simple cap table management in Claude Code. The "open source Carta" has 558 open issues and is dead. We'll build a working one.</p>
-                <span class="verdict verdict-gap">Coming Soon</span>
+            <div class="card">
+                <div class="card-top"><h3>Cap Table Lite</h3></div>
+                <div class="type">Planned Skill</div>
+                <p>Simple cap table management. The "open source Carta" has 558 open issues and is dead.</p>
+                <span class="badge badge-soon">Coming Soon</span>
             </div>
         </div>
     </section>
 
     <!-- ====== PRICING ====== -->
-    <section class="section">
-        <div class="section-header">
+    <section class="section" id="pricing">
+        <div class="section-head">
             <div class="eyebrow">Services</div>
             <h2>Need custom tools?</h2>
             <p>We build skills, plugins, and full AI agents for startups and wealth managers.</p>
@@ -463,7 +626,7 @@
         <div class="pricing-grid">
             <div class="price-card">
                 <div class="price">Free</div>
-                <div class="period">forever</div>
+                <div class="price-sub">forever</div>
                 <h3>Open Source Skills</h3>
                 <ul>
                     <li>4 production-ready skills</li>
@@ -472,9 +635,9 @@
                     <li>MIT licensed</li>
                 </ul>
             </div>
-            <div class="price-card">
+            <div class="price-card featured">
                 <div class="price">$299</div>
-                <div class="period">per skill / month</div>
+                <div class="price-sub">per skill / month</div>
                 <h3>Skill-as-a-Service</h3>
                 <ul>
                     <li>Custom skill for your workflow</li>
@@ -485,7 +648,7 @@
             </div>
             <div class="price-card">
                 <div class="price">$999+</div>
-                <div class="period">per month</div>
+                <div class="price-sub">per month</div>
                 <h3>Agent-as-a-Service</h3>
                 <ul>
                     <li>Full AI agent for your team</li>
@@ -496,8 +659,8 @@
             </div>
         </div>
         <div class="text-center">
-            <a href="mailto:mu.chen828@gmail.com?subject=Custom%20Skills%20Inquiry" class="cta-link">Get in Touch</a>
-            <a href="https://github.com/mooster/founder-toolkit" class="cta-outline">View on GitHub</a>
+            <a href="mailto:mu.chen828@gmail.com?subject=Custom%20Skills%20Inquiry" class="btn-primary">Get in Touch</a>
+            <a href="https://github.com/mooster/founder-toolkit" class="btn-ghost">View on GitHub</a>
         </div>
     </section>
 
@@ -506,7 +669,7 @@
 <footer>
     <div class="container">
         <div class="sister">In wealth management? See <a href="https://wealthskills.ai">wealthskills.ai</a></div>
-        Built by <a href="https://github.com/mooster">Mu Chen</a> &middot; CEO @ <a href="https://canopycloud.com">Canopy Cloud</a>
+        <div class="footer-credit">Built by <a href="https://github.com/mooster">Mu Chen</a> &middot; CEO @ <a href="https://canopycloud.com">Canopy Cloud</a></div>
     </div>
 </footer>
 
