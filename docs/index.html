@@ -247,6 +247,90 @@
             transition: opacity 0.2s;
         }
         .cta-link:hover { opacity: 0.85; }
+        .cta-link-outline {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-left: 12px;
+        }
+        .cta-link-outline:hover { background: var(--accent-dim); }
+
+        /* Services */
+        .services {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+        .services h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+        }
+        .service-card .price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .service-card .period {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .service-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .service-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-card ul li:last-child { border-bottom: none; }
+        .service-card ul li::before {
+            content: "→ ";
+            color: var(--accent);
+        }
+
+        /* Sister site */
+        .sister {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .sister p {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+        .sister a { color: var(--blue); text-decoration: none; }
+        .sister a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -342,6 +426,55 @@
         </div>
         <br><br>
         <a href="https://github.com/mooster/founder-toolkit" class="cta-link">View on GitHub</a>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h2>Need More? We Build Custom Skills.</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="price">Free</div>
+                <div class="period">forever</div>
+                <h3>Open Source Skills</h3>
+                <ul>
+                    <li>4 production-ready skills</li>
+                    <li>Investor updates, pitch review, metrics, lead scoring</li>
+                    <li>Community support via GitHub</li>
+                    <li>MIT licensed</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="price">$299</div>
+                <div class="period">per skill / month</div>
+                <h3>Skill-as-a-Service</h3>
+                <ul>
+                    <li>Custom skill built for your workflow</li>
+                    <li>Connected to your tools (CRM, Stripe, DB)</li>
+                    <li>Monthly updates &amp; maintenance</li>
+                    <li>Slack support</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="price">$999+</div>
+                <div class="period">per month</div>
+                <h3>Agent-as-a-Service</h3>
+                <ul>
+                    <li>Full AI agent deployed for your team</li>
+                    <li>Custom skills + MCP integrations</li>
+                    <li>Connected to Slack, email, your stack</li>
+                    <li>Managed hosting &amp; 24/7 monitoring</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="mailto:mu.chen828@gmail.com?subject=Custom%20Skills%20Inquiry" class="cta-link">Get in Touch</a>
+            <a href="https://github.com/mooster/founder-toolkit" class="cta-link-outline">View on GitHub</a>
+        </div>
+    </section>
+
+    <!-- Sister site -->
+    <section class="sister">
+        <p>In wealth management? Check out <a href="https://wealthskills.ai">wealthskills.ai</a> — AI skills for wealth managers.</p>
     </section>
 </div>
 
