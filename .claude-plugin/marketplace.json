@@ -5,14 +5,14 @@
     "email": "mu.chen828@gmail.com"
   },
   "metadata": {
-    "description": "Essential Claude Code skills for startup founders — investor updates, pitch deck reviews, SaaS metrics, lead scoring, and Chinese social media content creation.",
+    "description": "Essential Claude Code skills for startup founders — investor updates, pitch deck reviews, SaaS metrics, and lead scoring.",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "founder-toolkit",
       "source": ".",
-      "description": "5 skills for startup founders: investor update writer, pitch deck reviewer, startup metrics dashboard, outreach lead scorer, and Xiaohongshu (Little Red Book) content creator.",
+      "description": "4 skills for startup founders: investor update writer, pitch deck reviewer, startup metrics dashboard, and outreach lead scorer.",
       "version": "1.0.0",
       "author": {
         "name": "Mu Chen",
@@ -22,8 +22,8 @@
       "repository": "https://github.com/mooster/founder-toolkit",
       "license": "MIT",
       "category": "Business Sales",
-      "keywords": ["founder", "startup", "investor", "pitch-deck", "saas-metrics", "lead-scoring", "xiaohongshu", "chinese"],
-      "tags": ["startup", "founder", "investor-update", "pitch-review", "saas", "outreach", "chinese-content"]
+      "keywords": ["founder", "startup", "investor", "pitch-deck", "saas-metrics", "lead-scoring"],
+      "tags": ["startup", "founder", "investor-update", "pitch-review", "saas-metrics", "outreach", "lead-scoring"]
     }
   ]
 }

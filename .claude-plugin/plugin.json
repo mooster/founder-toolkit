@@ -1,7 +1,7 @@
 {
   "name": "founder-toolkit",
   "version": "1.0.0",
-  "description": "Essential skills for startup founders: investor updates, pitch deck review, SaaS metrics, lead scoring, and content creation (including Chinese social media).",
+  "description": "Essential skills for startup founders: investor updates, pitch deck review, SaaS metrics, and lead scoring.",
   "author": {
     "name": "Mu Chen",
     "email": "mu.chen828@gmail.com"
@@ -9,6 +9,6 @@
   "homepage": "https://github.com/mooster/founder-toolkit",
   "repository": "https://github.com/mooster/founder-toolkit",
   "license": "MIT",
-  "keywords": ["founder", "startup", "investor", "pitch-deck", "saas-metrics", "lead-scoring", "xiaohongshu"],
+  "keywords": ["founder", "startup", "investor", "pitch-deck", "saas-metrics", "lead-scoring"],
   "skills": "skills/*/SKILL.md"
 }

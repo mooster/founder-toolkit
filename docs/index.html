@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founder Skills — The AI-Native CEO Toolkit</title>
-    <meta name="description" content="Curated tools, skills, and MCP servers for AI-native startup founders. Every tool quality-checked. Zero trash.">
+    <title>Founder Skills — AI-Native CEO in the Open</title>
+    <meta name="description" content="I run a $120B AUM fintech with AI as my co-pilot. These are my tools, frameworks, and open-source skills. By Mu Chen, CEO of Canopy Cloud.">
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,7 +13,6 @@
         :root {
             --bg: #FAFAFA;
             --white: #FFFFFF;
-            --surface: #FFFFFF;
             --border: #E5E7EB;
             --border-hover: #C7C9CF;
             --text: #111827;
@@ -24,10 +23,6 @@
             --indigo-mid: #C7D2FE;
             --emerald: #059669;
             --emerald-light: #ECFDF5;
-            --violet: #7C3AED;
-            --violet-light: #F5F3FF;
-            --amber: #D97706;
-            --amber-light: #FFFBEB;
             --radius: 16px;
             --radius-sm: 10px;
         }
@@ -40,7 +35,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
 
         /* ── Nav ── */
         nav {
@@ -58,7 +53,7 @@
         }
         .nav-logo img { width: 28px; height: 28px; }
         .nav-logo span { font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
-        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
         .nav-links a {
             font-size: 14px;
             color: var(--text-secondary);
@@ -67,85 +62,141 @@
             transition: color 0.15s;
         }
         .nav-links a:hover { color: var(--text); }
-        .nav-cta {
-            display: inline-block;
-            padding: 8px 18px;
-            background: var(--indigo);
-            color: #fff !important;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: opacity 0.15s;
-        }
-        .nav-cta:hover { opacity: 0.9; }
 
         /* ── Hero ── */
         .hero {
             padding: 80px 0 60px;
-            text-align: center;
-            background: url('hero-bg.png') top center / 100% auto no-repeat;
+            max-width: 640px;
         }
-        .hero-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            background: var(--indigo-light);
-            border: 1px solid var(--indigo-mid);
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--indigo);
-            margin-bottom: 28px;
-        }
-        .hero-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--indigo); }
         .hero h1 {
-            font-size: clamp(36px, 6vw, 60px);
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 800;
-            line-height: 1.08;
-            letter-spacing: -0.035em;
-            margin-bottom: 20px;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
             color: var(--text);
-        }
-        .hero h1 em {
-            font-style: normal;
-            background: linear-gradient(135deg, var(--indigo), var(--violet));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         .hero .subtitle {
             font-size: 18px;
             color: var(--text-secondary);
-            max-width: 540px;
-            margin: 0 auto 40px;
+            line-height: 1.75;
+            margin-bottom: 36px;
+        }
+        .hero .subtitle strong { color: var(--text); font-weight: 600; }
+        .hero .subtitle a { color: var(--indigo); text-decoration: none; font-weight: 500; }
+        .hero .subtitle a:hover { text-decoration: underline; }
+
+        /* Author card */
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 48px;
+        }
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--indigo-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--indigo);
+            flex-shrink: 0;
+        }
+        .author-info { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .author-info .name { font-weight: 700; color: var(--text); font-size: 15px; }
+        .author-info a { color: var(--indigo); text-decoration: none; }
+        .author-info a:hover { text-decoration: underline; }
+
+        /* ── Sections ── */
+        .section { padding: 60px 0; }
+        .section + .section { border-top: 1px solid var(--border); }
+        .section h2 {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .section .section-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
             line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 560px;
         }
 
-        /* Stats */
-        .stats-row {
+        /* Thesis list */
+        .thesis-list {
+            list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 48px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
+            flex-direction: column;
+            gap: 16px;
         }
-        .stat { text-align: center; }
-        .stat .num {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--indigo);
-            letter-spacing: -0.02em;
+        .thesis-list li {
+            padding: 20px 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: border-color 0.15s;
         }
-        .stat .lbl {
+        .thesis-list li:hover { border-color: var(--border-hover); }
+        .thesis-list li .thesis-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .thesis-list li p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Skill cards */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .skill-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .skill-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .skill-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .skill-card .skill-type {
             font-size: 12px;
             color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            font-weight: 600;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .skill-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .skill-card .skill-badge {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: var(--emerald-light);
+            color: var(--emerald);
         }
 
-        /* Install */
+        /* Install box */
         .install-box {
             display: inline-flex;
             align-items: center;
@@ -154,7 +205,7 @@
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
             padding: 14px 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            margin-top: 24px;
         }
         .install-box .tag {
             font-size: 11px;
@@ -170,323 +221,79 @@
             font-weight: 500;
         }
 
-        /* Page map */
-        .page-map {
-            margin-top: 48px;
-            padding-top: 36px;
-            border-top: 1px solid var(--border);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .page-map-label {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-        .page-map-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .page-map-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.15s;
-        }
-        .page-map-links a:hover {
-            border-color: var(--indigo);
-            color: var(--indigo);
-            background: var(--indigo-light);
-        }
-        .page-map-links a .map-count {
-            font-size: 11px;
-            background: var(--bg);
-            color: var(--text-muted);
-            padding: 1px 7px;
-            border-radius: 100px;
-            font-weight: 700;
-        }
-        .page-map-links a:hover .map-count {
-            background: var(--indigo-mid);
-            color: var(--indigo);
-        }
-        .scroll-hint {
-            margin-top: 32px;
+        /* Links list */
+        .links-list {
+            list-style: none;
             display: flex;
             flex-direction: column;
+            gap: 12px;
+        }
+        .links-list a {
+            display: flex;
             align-items: center;
-            gap: 6px;
-            color: var(--text-muted);
-            font-size: 12px;
-            font-weight: 500;
-        }
-        .scroll-hint .arrow {
-            width: 20px;
-            height: 20px;
-            border-right: 2px solid var(--text-muted);
-            border-bottom: 2px solid var(--text-muted);
-            transform: rotate(45deg);
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: rotate(45deg) translateY(0); }
-            50% { transform: rotate(45deg) translateY(6px); }
-        }
-
-        /* ── Sections ── */
-        .section { padding: 80px 0; }
-        .section + .section { border-top: 1px solid var(--border); }
-        .section-head {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .section-head .eyebrow {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--indigo);
-            margin-bottom: 12px;
-        }
-        .section-head h2 {
-            font-size: clamp(26px, 4vw, 38px);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            margin-bottom: 12px;
-            color: var(--text);
-        }
-        .section-head p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            max-width: 520px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* Category pills */
-        .cat-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 5px 14px;
-            border-radius: 100px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-        }
-        .cat-ours { background: var(--indigo-light); color: var(--indigo); }
-        .cat-verified { background: var(--emerald-light); color: var(--emerald); }
-        .cat-building { background: var(--violet-light); color: var(--violet); }
-
-        /* ── Cards ── */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-        .card {
+            justify-content: space-between;
+            padding: 16px 20px;
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 24px;
-            transition: border-color 0.15s, box-shadow 0.15s;
             text-decoration: none;
-            color: inherit;
-            display: block;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 15px;
+            transition: border-color 0.15s, box-shadow 0.15s;
         }
-        .card:hover {
+        .links-list a:hover {
             border-color: var(--border-hover);
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 6px;
-        }
-        .card h3 { font-size: 16px; font-weight: 700; color: var(--text); }
-        .card .stars {
-            font-size: 12px;
-            color: var(--amber);
-            font-family: 'SF Mono', monospace;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-        .card .type {
-            font-size: 12px;
+        .links-list a .link-desc {
+            font-size: 13px;
+            font-weight: 400;
             color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 10px;
         }
-        .card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        .card .badge {
-            display: inline-block;
-            margin-top: 14px;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 100px;
-        }
-        .badge-ours { background: var(--indigo-light); color: var(--indigo); }
-        .badge-good { background: var(--emerald-light); color: var(--emerald); }
-        .badge-soon { background: var(--violet-light); color: var(--violet); }
+        .links-list a .arrow { color: var(--text-muted); font-size: 18px; }
 
-        /* ── Pricing ── */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-            margin-bottom: 40px;
+        /* Numbers row */
+        .numbers {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
         }
-        .price-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 32px 28px;
-        }
-        .price-card.featured {
-            border-color: var(--indigo);
-            box-shadow: 0 0 0 1px var(--indigo);
-            position: relative;
-        }
-        .price-card.featured::before {
-            content: "Most Popular";
-            position: absolute;
-            top: -11px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--indigo);
-            color: #fff;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 14px;
-            border-radius: 100px;
-            letter-spacing: 0.5px;
-        }
-        .price-card .price {
-            font-size: 36px;
+        .numbers .num-item { text-align: left; }
+        .numbers .val {
+            font-size: 28px;
             font-weight: 800;
-            color: var(--text);
+            color: var(--indigo);
             letter-spacing: -0.02em;
         }
-        .price-card .price-sub {
-            font-size: 13px;
+        .numbers .lbl {
+            font-size: 12px;
             color: var(--text-muted);
-            margin-bottom: 16px;
-            font-weight: 500;
-        }
-        .price-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--text);
-        }
-        .price-card ul {
-            list-style: none;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        .price-card ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .price-card ul li:last-child { border-bottom: none; }
-        .price-card ul li::before {
-            content: "";
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--emerald-light);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%23059669' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* CTA buttons */
-        .btn-primary {
-            display: inline-block;
-            padding: 14px 32px;
-            background: var(--indigo);
-            color: #fff;
-            font-weight: 700;
-            font-size: 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: all 0.15s;
-            box-shadow: 0 1px 2px rgba(79,70,229,0.3);
-        }
-        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79,70,229,0.25); }
-        .btn-ghost {
-            display: inline-block;
-            padding: 14px 32px;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             font-weight: 600;
-            font-size: 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: all 0.15s;
-            margin-left: 12px;
         }
-        .btn-ghost:hover { border-color: var(--text-muted); color: var(--text); }
-        .text-center { text-align: center; }
 
         /* ── Footer ── */
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border);
-            text-align: center;
         }
-        .sister {
+        footer p {
             font-size: 14px;
             color: var(--text-muted);
-            margin-bottom: 12px;
+            line-height: 1.8;
         }
-        .sister a { color: var(--indigo); text-decoration: none; font-weight: 500; }
-        .sister a:hover { text-decoration: underline; }
-        .footer-credit {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-        .footer-credit a { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
-        .footer-credit a:hover { color: var(--indigo); }
+        footer a { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+        footer a:hover { color: var(--indigo); }
 
         /* ── Responsive ── */
         @media (max-width: 640px) {
-            .card-grid { grid-template-columns: 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .btn-ghost { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
-            .btn-primary { display: block; text-align: center; }
-            .stats-row { gap: 24px; }
-            .nav-links a:not(.nav-cta) { display: none; }
+            .skill-grid { grid-template-columns: 1fr; }
             .hero { padding: 60px 0 40px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .numbers { gap: 24px; }
         }
     </style>
 </head>
@@ -501,269 +308,131 @@
             <span>Founder Skills</span>
         </a>
         <div class="nav-links">
-            <a href="#tools">Tools</a>
-            <a href="#pricing">Pricing</a>
-            <a href="https://github.com/mooster/founder-toolkit" class="nav-cta" target="_blank">GitHub</a>
+            <a href="#thesis">Thesis</a>
+            <a href="#skills">Skills</a>
+            <a href="https://amongstfamilies.substack.com/" target="_blank">Newsletter</a>
+            <a href="https://github.com/mooster/founder-toolkit" target="_blank">GitHub</a>
         </div>
     </nav>
 
     <!-- ====== HERO ====== -->
     <section class="hero">
-        <div class="hero-pill"><span class="dot"></span> AI-Native CEO Toolkit &middot; Quality-Checked</div>
-        <h1>Every tool a <em>founder</em><br>needs. Zero trash.</h1>
-        <p class="subtitle">We tested every Claude Code plugin, MCP server, and AI tool a startup CEO might use. Most are garbage. Here's what actually works.</p>
+        <h1>I run a fintech with AI as co-pilot. This is the open notebook.</h1>
+        <p class="subtitle">
+            I'm the CEO of <strong><a href="https://canopycloud.com" target="_blank">Canopy Cloud</a></strong> — an AI-native wealth management platform serving 60+ institutions and $120B+ in assets. I use AI agents, Claude Code skills, and MCP servers to run the company day-to-day. This site is where I open-source what works and write about what I've learned.
+        </p>
 
-        <div class="stats-row">
-            <div class="stat"><div class="num">30+</div><div class="lbl">Tools Reviewed</div></div>
-            <div class="stat"><div class="num">7</div><div class="lbl">Passed QA</div></div>
-            <div class="stat"><div class="num">4</div><div class="lbl">Built by Us</div></div>
-            <div class="stat"><div class="num">5</div><div class="lbl">Gaps to Fill</div></div>
+        <div class="author-card">
+            <div class="author-avatar">MC</div>
+            <div class="author-info">
+                <div class="name">Mu Chen</div>
+                CEO @ Canopy Cloud &middot; Guest Lecturer, Tsinghua PBCSF<br>
+                <a href="https://amongstfamilies.substack.com/" target="_blank">Amongst Families</a> &middot;
+                <a href="https://github.com/mooster" target="_blank">GitHub</a>
+            </div>
         </div>
+    </section>
 
+    <!-- ====== THESIS ====== -->
+    <section class="section" id="thesis">
+        <h2>What I believe</h2>
+        <p class="section-desc">
+            Three ideas from running a company through the AI transition. These drive everything below.
+        </p>
+        <ul class="thesis-list">
+            <li>
+                <div class="thesis-title">Intelligence is no longer scarce. Direction is.</div>
+                <p>Analysis, coding, writing, pattern recognition — all abundant now. What's scarce: knowing which direction to point it. Context, judgment, and the willingness to own the outcome.</p>
+            </li>
+            <li>
+                <div class="thesis-title">AI amplifies direction. It doesn't produce it.</div>
+                <p>Give it good direction, 100x leverage. Bad direction, 100x speed into a wall. No direction, noise. The CEO's job isn't to do cognitive work — it's to set the vector.</p>
+            </li>
+            <li>
+                <div class="thesis-title">Build position, not service.</div>
+                <p>Selling cognitive work gets compressed by AI. Selling direction — frameworks, judgment, authority — gets amplified. Andreessen built Netscape first, then wrote the manifesto.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ====== OPEN SOURCE SKILLS ====== -->
+    <section class="section" id="skills">
+        <h2>Skills I actually use</h2>
+        <p class="section-desc">
+            Claude Code skills I built for my own workflow. Open source, free, no catch. If they're useful to you, take them.
+        </p>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <h3>Investor Update Writer</h3>
+                <div class="skill-type">Claude Code Skill</div>
+                <p>MRR, burn, highlights in — concise update out. Follows YC/a16z formatting. Under 500 words, no fluff.</p>
+                <span class="skill-badge">Open Source</span>
+            </div>
+            <div class="skill-card">
+                <h3>Pitch Deck Reviewer</h3>
+                <div class="skill-type">Claude Code Skill</div>
+                <p>10-dimension scoring from a VC lens. Narrative, market, traction, team, the ask — with specific red flags.</p>
+                <span class="skill-badge">Open Source</span>
+            </div>
+            <div class="skill-card">
+                <h3>Startup Metrics Dashboard</h3>
+                <div class="skill-type">Claude Code Skill</div>
+                <p>ARR, NRR, LTV:CAC, burn multiple, runway, magic number. With stage-appropriate benchmarks baked in.</p>
+                <span class="skill-badge">Open Source</span>
+            </div>
+            <div class="skill-card">
+                <h3>Outreach Lead Scorer</h3>
+                <div class="skill-type">Claude Code Skill</div>
+                <p>Define ICP, input company list, get A/B/C/D grades with rationale. Tested on 300+ real companies.</p>
+                <span class="skill-badge">Open Source</span>
+            </div>
+        </div>
         <div class="install-box">
             <span class="tag">Install</span>
-            <code>/plugin marketplace add mooster/founder-toolkit</code>
-        </div>
-
-        <div class="page-map">
-            <div class="page-map-label">What's Inside</div>
-            <div class="page-map-links">
-                <a href="#skills">Our Skills <span class="map-count">4</span></a>
-                <a href="#legal">Legal <span class="map-count">1</span></a>
-                <a href="#comms">Email &amp; Calendar <span class="map-count">2</span></a>
-                <a href="#sales">Sales &amp; Outreach <span class="map-count">2</span></a>
-                <a href="#product">Product &amp; Hiring <span class="map-count">2</span></a>
-                <a href="#coming-soon">Coming Soon <span class="map-count">5</span></a>
-                <a href="#pricing">Pricing</a>
-            </div>
-            <div class="scroll-hint">
-                <div class="arrow"></div>
-            </div>
+            <code>claude plugin add mooster/founder-toolkit</code>
         </div>
     </section>
 
-    <!-- ====== OUR SKILLS ====== -->
-    <section class="section" id="skills">
-        <div class="section-head">
-            <div class="eyebrow">Built by Us</div>
-            <h2>Founder Skills</h2>
-            <p>Four skills built from real startup operating experience. Free, open source, zero config.</p>
-        </div>
-        <div class="cat-pill cat-ours">Our Plugin</div>
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-top"><h3>Investor Update Writer</h3></div>
-                <div class="type">Claude Code Skill</div>
-                <p>Input MRR, burn, highlights. Get a concise, professional update following YC and a16z best practices. Under 500 words, no fluff.</p>
-                <span class="badge badge-ours">Our Skill</span>
-            </div>
-            <div class="card">
-                <div class="card-top"><h3>Pitch Deck Reviewer</h3></div>
-                <div class="type">Claude Code Skill</div>
-                <p>10-dimension scoring from a VC perspective. Narrative, market size, traction, team, the ask — with specific red flags.</p>
-                <span class="badge badge-ours">Our Skill</span>
-            </div>
-            <div class="card">
-                <div class="card-top"><h3>Startup Metrics Dashboard</h3></div>
-                <div class="type">Claude Code Skill</div>
-                <p>Full metric suite: ARR, NRR, LTV:CAC, burn multiple, runway, magic number. With stage-appropriate benchmarks.</p>
-                <span class="badge badge-ours">Our Skill</span>
-            </div>
-            <div class="card">
-                <div class="card-top"><h3>Outreach Lead Scorer</h3></div>
-                <div class="type">Claude Code Skill</div>
-                <p>Define your ICP, input a company list. Get A/B/C/D grades with transparent rationale. Tested on 300+ companies.</p>
-                <span class="badge badge-ours">Our Skill</span>
-            </div>
-        </div>
+    <!-- ====== WRITING ====== -->
+    <section class="section" id="writing">
+        <h2>Longer writing</h2>
+        <p class="section-desc">
+            Strategy pieces on AI in wealth management, and what it means to run a company when intelligence is cheap.
+        </p>
+        <ul class="links-list">
+            <li><a href="https://amongstfamilies.substack.com/" target="_blank">
+                <span>Amongst Families <span class="link-desc">— AI + wealth management newsletter</span></span>
+                <span class="arrow">&rarr;</span>
+            </a></li>
+            <li><a href="https://github.com/mooster/founder-toolkit" target="_blank">
+                <span>GitHub <span class="link-desc">— source code for all skills</span></span>
+                <span class="arrow">&rarr;</span>
+            </a></li>
+        </ul>
     </section>
 
-    <!-- ====== LEGAL ====== -->
-    <section class="section" id="legal">
-        <div class="section-head">
-            <div class="eyebrow">Legal &amp; Contracts</div>
-            <h2>Contract Review</h2>
-            <p>Review NDAs, vendor agreements, and compliance docs without a $500/hr lawyer.</p>
+    <!-- ====== CANOPY ====== -->
+    <section class="section" id="canopy">
+        <h2>The day job</h2>
+        <div class="numbers">
+            <div class="num-item"><div class="val">$120B+</div><div class="lbl">Assets Under Management</div></div>
+            <div class="num-item"><div class="val">60+</div><div class="lbl">Institutional Clients</div></div>
+            <div class="num-item"><div class="val">1,600+</div><div class="lbl">Active Users</div></div>
+            <div class="num-item"><div class="val">250+</div><div class="lbl">Custodian Integrations</div></div>
         </div>
-        <div class="cat-pill cat-verified">Verified</div>
-        <div class="card-grid">
-            <a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/legal" class="card" target="_blank">
-                <div class="card-top"><h3>Anthropic Legal Plugin</h3><span class="stars">8.3K</span></div>
-                <div class="type">Official Claude Code Plugin</div>
-                <p>Clause-by-clause contract analysis with RED/YELLOW/GREEN risk flags. NDA triage, vendor review, compliance checks. Configurable playbooks.</p>
-                <span class="badge badge-good">Verified Good</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- ====== EMAIL & CALENDAR ====== -->
-    <section class="section" id="comms">
-        <div class="section-head">
-            <div class="eyebrow">Communication</div>
-            <h2>Email &amp; Calendar</h2>
-            <p>Manage inbox, schedule meetings, and draft replies — all from Claude Code.</p>
-        </div>
-        <div class="cat-pill cat-verified">Verified</div>
-        <div class="card-grid">
-            <a href="https://github.com/taylorwilsdon/google_workspace_mcp" class="card" target="_blank">
-                <div class="card-top"><h3>Google Workspace MCP</h3><span class="stars">1.6K</span></div>
-                <div class="type">MCP Server</div>
-                <p>Gmail, Calendar, Drive, Docs, Sheets — full Google Workspace control. Most mature MCP in the ecosystem. OAuth 2.1, multi-user.</p>
-                <span class="badge badge-good">Verified Good</span>
-            </a>
-            <a href="https://github.com/elyxlz/microsoft-mcp" class="card" target="_blank">
-                <div class="card-top"><h3>Microsoft 365 MCP</h3><span class="stars">39</span></div>
-                <div class="type">MCP Server</div>
-                <p>Outlook email, Calendar, OneDrive, Contacts. 40+ tools, local token caching. Small but clean — only 1 open issue.</p>
-                <span class="badge badge-good">Verified Good</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- ====== SALES ====== -->
-    <section class="section" id="sales">
-        <div class="section-head">
-            <div class="eyebrow">Sales &amp; Outreach</div>
-            <h2>Lead Gen &amp; Research</h2>
-            <p>Find leads, enrich data, and research markets.</p>
-        </div>
-        <div class="cat-pill cat-verified">Verified</div>
-        <div class="card-grid">
-            <a href="https://github.com/stickerdaniel/linkedin-mcp-server" class="card" target="_blank">
-                <div class="card-top"><h3>LinkedIn MCP</h3><span class="stars">949</span></div>
-                <div class="type">MCP Server</div>
-                <p>Scrape profiles, companies, and job postings. Only 2 open issues — users asking for MORE features, not complaining.</p>
-                <span class="badge badge-good">Verified Good</span>
-            </a>
-            <a href="https://github.com/king-of-the-grackles/reddit-research-mcp" class="card" target="_blank">
-                <div class="card-top"><h3>Reddit Research MCP</h3><span class="stars">86</span></div>
-                <div class="type">MCP Server</div>
-                <p>Semantic search across 20,000+ subreddits. Competitive intelligence, customer discovery, market research. Solid and focused.</p>
-                <span class="badge badge-good">Verified Good</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- ====== PRODUCT ====== -->
-    <section class="section" id="product">
-        <div class="section-head">
-            <div class="eyebrow">Product &amp; Hiring</div>
-            <h2>PM Frameworks &amp; Dev Tools</h2>
-            <p>Product management skills and professional Claude Code tooling.</p>
-        </div>
-        <div class="cat-pill cat-verified">Verified</div>
-        <div class="card-grid">
-            <a href="https://github.com/RefoundAI/lenny-skills" class="card" target="_blank">
-                <div class="card-top"><h3>Lenny PM Skills</h3><span class="stars">319</span></div>
-                <div class="type">Claude Code Skills (86)</div>
-                <p>86 product management skills: writing JDs, evaluating candidates, roadmap planning, user interviews. From Lenny's Podcast frameworks.</p>
-                <span class="badge badge-good">Verified Good</span>
-            </a>
-            <a href="https://github.com/maxritter/claude-pilot" class="card" target="_blank">
-                <div class="card-top"><h3>Pilot Shell</h3><span class="stars">1.5K</span></div>
-                <div class="type">Dev Environment</div>
-                <p>Professional Claude Code wrapper. Multi-session management, structured workflows. Updated daily, zero open issues.</p>
-                <span class="badge badge-good">Verified Good</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- ====== COMING SOON ====== -->
-    <section class="section" id="coming-soon">
-        <div class="section-head">
-            <div class="eyebrow">Coming Soon</div>
-            <h2>Nobody built these yet.<br>So we will.</h2>
-            <p>We reviewed 30+ tools in each category. These gaps have zero good solutions.</p>
-        </div>
-        <div class="cat-pill cat-building">Building</div>
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-top"><h3>CEO Weekly Briefing</h3></div>
-                <div class="type">Planned Skill</div>
-                <p>Aggregate Slack, CRM, and metrics into a one-page CEO briefing. Every Monday, zero effort.</p>
-                <span class="badge badge-soon">Coming Soon</span>
-            </div>
-            <div class="card">
-                <div class="card-top"><h3>Board Deck Generator</h3></div>
-                <div class="type">Planned Skill</div>
-                <p>Metrics + updates into a board-ready PPT. Every existing PPT tool crashes or can't save files.</p>
-                <span class="badge badge-soon">Coming Soon</span>
-            </div>
-            <div class="card">
-                <div class="card-top"><h3>Meeting &rarr; Action Items</h3></div>
-                <div class="type">Planned Skill</div>
-                <p>Lightweight meeting transcription to structured action items. Vexa is 2.5GB and flaky.</p>
-                <span class="badge badge-soon">Coming Soon</span>
-            </div>
-            <div class="card">
-                <div class="card-top"><h3>Standup Aggregator</h3></div>
-                <div class="type">Planned Skill</div>
-                <p>Collect async standups from your team, generate a CEO-view dashboard.</p>
-                <span class="badge badge-soon">Coming Soon</span>
-            </div>
-            <div class="card">
-                <div class="card-top"><h3>Cap Table Lite</h3></div>
-                <div class="type">Planned Skill</div>
-                <p>Simple cap table management. The "open source Carta" has 558 open issues and is dead.</p>
-                <span class="badge badge-soon">Coming Soon</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== PRICING ====== -->
-    <section class="section" id="pricing">
-        <div class="section-head">
-            <div class="eyebrow">Services</div>
-            <h2>Need custom tools?</h2>
-            <p>We build skills, plugins, and full AI agents for startups and wealth managers.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div class="price">Free</div>
-                <div class="price-sub">forever</div>
-                <h3>Open Source Skills</h3>
-                <ul>
-                    <li>4 production-ready skills</li>
-                    <li>Curated tool directory</li>
-                    <li>Community support via GitHub</li>
-                    <li>MIT licensed</li>
-                </ul>
-            </div>
-            <div class="price-card featured">
-                <div class="price">$299</div>
-                <div class="price-sub">per skill / month</div>
-                <h3>Skill-as-a-Service</h3>
-                <ul>
-                    <li>Custom skill for your workflow</li>
-                    <li>Connected to your tools</li>
-                    <li>Monthly updates &amp; maintenance</li>
-                    <li>Slack support</li>
-                </ul>
-            </div>
-            <div class="price-card">
-                <div class="price">$999+</div>
-                <div class="price-sub">per month</div>
-                <h3>Agent-as-a-Service</h3>
-                <ul>
-                    <li>Full AI agent for your team</li>
-                    <li>Custom skills + MCP integrations</li>
-                    <li>Slack, email, your whole stack</li>
-                    <li>Managed hosting &amp; monitoring</li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center">
-            <a href="mailto:mu.chen828@gmail.com?subject=Custom%20Skills%20Inquiry" class="btn-primary">Get in Touch</a>
-            <a href="https://github.com/mooster/founder-toolkit" class="btn-ghost">View on GitHub</a>
-        </div>
+        <p class="section-desc">
+            <a href="https://canopycloud.com" target="_blank" style="color: var(--indigo); text-decoration: none; font-weight: 600;">Canopy Cloud</a> turns raw bank data into AI-ready wealth intelligence for family offices and UHNW advisors. Everything I write about comes from building this.
+        </p>
     </section>
 
 </div>
 
 <footer>
     <div class="container">
-        <div class="sister">In wealth management? See <a href="https://wealthskills.ai">wealthskills.ai</a></div>
-        <div class="footer-credit">Built by <a href="https://github.com/mooster">Mu Chen</a> &middot; CEO @ <a href="https://canopycloud.com">Canopy Cloud</a></div>
+        <p>
+            In wealth management? See <a href="https://wealthskills.ai">wealthskills.ai</a><br>
+            Built by <a href="https://github.com/mooster">Mu Chen</a> &middot; CEO @ <a href="https://canopycloud.com">Canopy Cloud</a>
+        </p>
     </div>
 </footer>
 
